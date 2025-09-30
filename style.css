@@ -141,3 +141,19 @@ body {
     padding: 15px;
   }
 }
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+  justify-items: center;
+}
+
+
+body {
+  background-color: var(--very-dark-blue-main);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+}
