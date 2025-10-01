@@ -44,7 +44,8 @@ body {
 }
 
 .logo {
-  height: 50px;
+  max-height: 50px; /* corrige tamanho da logo */
+  width: auto;
 }
 
 .site-title {
@@ -57,6 +58,8 @@ body {
   list-style: none;
   display: flex;
   gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .site-nav a {
@@ -80,6 +83,10 @@ body {
   .site-nav ul {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .logo-container {
+    justify-content: center;
   }
 }
 
@@ -142,93 +149,3 @@ body {
   color: var(--cyan);
 }
 
-.card__description {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.card__details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.card__price, .card__time {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-}
-
-.card__price span {
-  color: var(--cyan);
-}
-
-.card__divider {
-  height: 1px;
-  background-color: var(--very-dark-blue-line);
-}
-
-.card__creator {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 15px;
-  font-size: 0.9rem;
-}
-
-.card__avatar {
-  width: 35px;
-  height: 35px;
-  border: 1px solid var(--white);
-  border-radius: 50%;
-}
-
-.card__creator span {
-  color: var(--white);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.card__creator span:hover {
-  color: var(--cyan);
-}
-
-/* Responsividade do card */
-@media (max-width: 400px) {
-  .card {
-    width: 90%;
-    padding: 15px;
-  }
-}
-
-/* Lista de cards */
-.card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-/* Footer fixo centralizado */
-.align-center {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 90%;
-  text-align: center;
-  font-size: 1rem;
-  color: var(--soft-blue);
-  z-index: 1000;
-}
-
-@media (max-width: 400px) {
-  .align-center h1 {
-    font-size: 0.85rem;
-  }
-}
