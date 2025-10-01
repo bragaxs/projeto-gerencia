@@ -155,9 +155,8 @@ body {
 }
 
 .align-center{
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 20px;
-  color: var(--soft-blue);
-  font-weight: 400;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  gap: 20px;               /* espaço entre elementos */
 }
