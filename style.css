@@ -44,7 +44,8 @@ body {
 }
 
 .logo {
-  height: 50px;
+  max-height: 50px; /* ajusta o tamanho da logo */
+  width: auto;
 }
 
 .site-title {
@@ -81,6 +82,10 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
+
+  .logo-container {
+    justify-content: center;
+  }
 }
 
 /* Card individual */
@@ -106,7 +111,9 @@ body {
 
 .card__image {
   width: 100%;
-  display: block;
+  height: auto;
+  max-height: 250px; /* limita altura da imagem */
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -195,14 +202,6 @@ body {
   color: var(--cyan);
 }
 
-/* Responsividade do card */
-@media (max-width: 400px) {
-  .card {
-    width: 90%;
-    padding: 15px;
-  }
-}
-
 /* Lista de cards */
 .card-list {
   display: grid;
@@ -214,17 +213,21 @@ body {
   justify-items: center;
 }
 
-/* Footer fixo centralizado */
+/* Footer fixo */
 .align-center {
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   max-width: 90%;
+  background-color: var(--very-dark-blue-card);
+  color: var(--soft-blue);
+  padding: 10px 20px;
   text-align: center;
   font-size: 1rem;
-  color: var(--soft-blue);
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
   z-index: 1000;
+  word-wrap: break-word;
 }
 
 @media (max-width: 400px) {
