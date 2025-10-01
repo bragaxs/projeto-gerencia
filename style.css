@@ -254,6 +254,10 @@ body {
 /* RESPONSIVIDADE */
 /* ---------------------------------------------------- */
 
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
 /* Tablets */
 @media (max-width: 1024px) {
   .main-header__content {
@@ -265,14 +269,19 @@ body {
 
 /* Smartphones médios */
 @media (max-width: 768px) {
+  /* Cards passam a ficar empilhados */
   .card-list {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
+    padding: 1.5rem;
   }
 
   .card {
-    max-width: 300px;
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   .main-header__list {
@@ -284,9 +293,8 @@ body {
 /* Smartphones pequenos */
 @media (max-width: 480px) {
   .card {
-    width: 90%;
+    width: 95%; /* ocupa quase toda a tela */
     padding: 15px;
-    margin: 0 auto;
   }
 
   .card__title {
