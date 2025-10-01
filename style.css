@@ -1,280 +1,293 @@
 /* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 /* Variáveis */
 :root {
-  --soft-blue: hsl(215, 51%, 70%);
-  --cyan: hsl(178, 100%, 50%);
-  --very-dark-blue-main: hsl(217, 54%, 11%);
-  --very-dark-blue-card: hsl(216, 50%, 16%);
-  --very-dark-blue-line: hsl(215, 32%, 27%);
-  --white: hsl(0, 0%, 100%);
-  --font: 'Outfit', sans-serif;
+ --soft-blue: hsl(215, 51%, 70%);
+ --cyan: hsl(178, 100%, 50%);
+ --very-dark-blue-main: hsl(217, 54%, 11%);
+ --very-dark-blue-card: hsl(216, 50%, 16%);
+ --very-dark-blue-line: hsl(215, 32%, 27%);
+ --white: hsl(0, 0%, 100%);
+ --font: 'Outfit', sans-serif;
 }
 
 /* Body */
 body {
-  font-family: var(--font);
-  background-color: var(--very-dark-blue-main);
-  color: var(--soft-blue);
-  margin: 0;
-  padding: 0 0 120px 0; /* espaço para footer fixo */
+ font-family: var(--font);
+ background-color: var(--very-dark-blue-main);
+ color: var(--soft-blue);
+ margin: 0;
+ padding: 0 0 120px 0; /* espaço para footer fixo */
 }
 
 /* Card individual */
 .card {
-  background-color: var(--very-dark-blue-card);
-  border-radius: 15px;
-  padding: 20px;
-  width: 350px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+ background-color: var(--very-dark-blue-card);
+ border-radius: 15px;
+ padding: 20px;
+ width: 350px;
+ box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+ transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+ transform: translateY(-10px);
 }
 
 .card__image-container {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
+ position: relative;
+ border-radius: 10px;
+ overflow: hidden;
+ cursor: pointer;
 }
 
 .card__image {
-  width: 100%;
-  display: block;
-  border-radius: 10px;
+ width: 100%;
+ display: block;
+ border-radius: 10px;
 }
 
 .card__overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: hsla(178, 100%, 50%, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background-color: hsla(178, 100%, 50%, 0.5);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transition: opacity 0.3s ease;
 }
 
 .card__image-container:hover .card__overlay {
-  opacity: 1;
+ opacity: 1;
 }
 
 .card__view-icon {
-  width: 50px;
+ width: 50px;
 }
 
 .card__title {
-  margin: 20px 0 15px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--white);
-  cursor: pointer;
-  transition: color 0.3s ease;
+ margin: 20px 0 15px;
+ font-size: 1.4rem;
+ font-weight: 600;
+ color: var(--white);
+ cursor: pointer;
+ transition: color 0.3s ease;
 }
 
 .card__title:hover {
-  color: var(--cyan);
+ color: var(--cyan);
 }
 
 .card__description {
-  font-size: 1rem;
-  line-height: 1.5;
+ font-size: 1rem;
+ line-height: 1.5;
 }
 
 .card__details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 20px 0;
 }
 
 .card__price, .card__time {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ font-weight: 600;
 }
 
 .card__price span {
-  color: var(--cyan);
+ color: var(--cyan);
 }
 
 .card__divider {
-  height: 1px;
-  background-color: var(--very-dark-blue-line);
+ height: 1px;
+ background-color: var(--very-dark-blue-line);
 }
 
 .card__creator {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 15px;
-  font-size: 0.9rem;
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ margin-top: 15px;
+ font-size: 0.9rem;
 }
 
 .card__avatar {
-  width: 35px;
-  height: 35px;
-  border: 1px solid var(--white);
-  border-radius: 50%;
+ width: 35px;
+ height: 35px;
+ border: 1px solid var(--white);
+ border-radius: 50%;
 }
 
 .card__creator span {
-  color: var(--white);
-  cursor: pointer;
-  transition: color 0.3s ease;
+ color: var(--white);
+ cursor: pointer;
+ transition: color 0.3s ease;
 }
 
 .card__creator span:hover {
-  color: var(--cyan);
-}
-
-/* Responsividade do card */
-@media (max-width: 400px) {
-  .card {
-    width: 90%;
-    padding: 15px;
-  }
+ color: var(--cyan);
 }
 
 /* Lista de cards */
 .card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 2rem;
+ padding: 2rem;
+ max-width: 1200px;
+ margin: 0 auto;
+ justify-items: center;
 }
 
-/* Footer fixo centralizado */
 /* Footer fixo centralizado */
 .align-center {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 90%;
-  
-  /* ------------------------------------- */
-  /* ALTERAÇÕES APLICADAS AQUI: */
-  /* Remove o background do card, usa o do body para integração total */
-
-  
-  color: var(--soft-blue);
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 1rem;
-  
-  /* Remove a sombra (o aspecto de "caixa") */
-  box-shadow: none; 
-  /* ------------------------------------- */
-  
-  z-index: 1000;
-  word-wrap: break-word;
+ position: fixed;
+ bottom: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ max-width: 90%;
+ 
+ /* ------------------------------------- */
+ /* ALTERAÇÃO: INTEGRANDO AO FUNDO */
+ background-color: var(--very-dark-blue-main); 
+ /* ------------------------------------- */
+ 
+ color: var(--soft-blue);
+ padding: 10px 20px;
+ text-align: center;
+ font-size: 1rem;
+ 
+ /* ALTERAÇÃO: REMOVENDO A SOMBRA DE CAIXA */
+ box-shadow: none; 
+ 
+ z-index: 1000;
+ word-wrap: break-word;
 }
 
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE ATUALIZADA */
+/* ---------------------------------------------------- */
 
 @media (max-width: 400px) {
+  /* Ajuste para o Footer */
   .align-center h1 {
-    font-size: 0.85rem;
+ font-size: 0.85rem;
+ }
+
+  /* Ajuste para a Lista de Cards em telas pequenas */
+  .card-list {
+    padding: 1rem; /* Diminui o padding da lista */
+    gap: 1.5rem;   /* Espaço menor entre os cards */
   }
+
+  /* Ajuste para o Card individual */
+ .card {
+  width: 90%; /* Garante que ocupe a maior parte da tela */
+ padding: 15px;
+    margin: 0 auto; /* Centraliza o card */
+ }
 }
 
+
+/* ---------------------------------------------------- */
+/* CSS DO HEADER (ADICIONADO PREVIAMENTE) */
+/* ---------------------------------------------------- */
+
 .main-header {
-  background-color: var(--very-dark-blue-card); /* Cor de fundo do card */
-  padding: 15px 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem; /* Espaço antes da lista de cards */
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Garante que fique acima dos outros elementos */
+ background-color: var(--very-dark-blue-card); /* Cor de fundo do card */
+ padding: 15px 2rem;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ margin-bottom: 2rem; /* Espaço antes da lista de cards */
+ position: sticky;
+ top: 0;
+ z-index: 999; /* Garante que fique acima dos outros elementos */
 }
 
 .main-header__content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .main-header__logo a {
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1.8rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+ text-decoration: none;
+ color: var(--white);
+ font-size: 1.8rem;
+ font-weight: 700;
+ display: flex;
+ align-items: center;
+ gap: 10px;
 }
 
 .main-header__logo-img {
-    width: 30px; /* Ajuste o tamanho da sua logo */
-    height: 30px;
+ width: 30px; /* Ajuste o tamanho da sua logo */
+ height: 30px;
 }
 
 .main-header__logo-highlight {
-  color: var(--cyan); /* Destaca uma parte do nome com a cor ciano */
+ color: var(--cyan); /* Destaca uma parte do nome com a cor ciano */
 }
 
 /* Navegação */
 .main-header__list {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+ list-style: none;
+ display: flex;
+ gap: 25px;
 }
 
 .main-header__link {
-  text-decoration: none;
-  color: var(--soft-blue);
-  font-weight: 500;
-  transition: color 0.3s ease;
-  font-size: 1rem;
+ text-decoration: none;
+ color: var(--soft-blue);
+ font-weight: 500;
+ transition: color 0.3s ease;
+ font-size: 1rem;
 }
 
 .main-header__link:hover {
-  color: var(--white);
+ color: var(--white);
 }
 
 /* Botão de Ação (Connect Wallet) */
 .main-header__link--cta {
-  background-color: var(--cyan);
-  color: var(--very-dark-blue-main);
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
+ background-color: var(--cyan);
+ color: var(--very-dark-blue-main);
+ padding: 8px 15px;
+ border-radius: 5px;
+ font-weight: 600;
+ transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-header__link--cta:hover {
-  background-color: var(--white);
-  color: var(--very-dark-blue-main);
+ background-color: var(--white);
+ color: var(--very-dark-blue-main);
 }
 
 /* Responsividade do Header */
 @media (max-width: 768px) {
-  .main-header__content {
-    flex-direction: column;
-    text-align: center;
-  }
+ .main-header__content {
+  flex-direction: column;
+ text-align: center;
+ }
 
-  .main-header__logo {
-    margin-bottom: 15px;
-  }
+ .main-header__logo {
+ margin-bottom: 15px;
+ }
 
-  .main-header__list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+ .main-header__list {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+ }
 }
