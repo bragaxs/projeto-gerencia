@@ -168,7 +168,7 @@ body {
   /* ------------------------------------- */
   /* ALTERAÇÕES APLICADAS AQUI: */
   /* Remove o background do card, usa o do body para integração total */
-  background-color: var(--very-dark-blue-main); 
+
   
   color: var(--soft-blue);
   padding: 10px 20px;
