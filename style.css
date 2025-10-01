@@ -157,21 +157,32 @@ body {
 }
 
 /* Footer fixo centralizado */
+/* Footer fixo centralizado */
 .align-center {
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   max-width: 90%;
-  background-color: var(--very-dark-blue-card);
+  
+  /* ------------------------------------- */
+  /* ALTERAÇÕES APLICADAS AQUI: */
+  /* Remove o background do card, usa o do body para integração total */
+  background-color: var(--very-dark-blue-main); 
+  
   color: var(--soft-blue);
   padding: 10px 20px;
   text-align: center;
   font-size: 1rem;
-  box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+  
+  /* Remove a sombra (o aspecto de "caixa") */
+  box-shadow: none; 
+  /* ------------------------------------- */
+  
   z-index: 1000;
   word-wrap: break-word;
 }
+
 
 @media (max-width: 400px) {
   .align-center h1 {
