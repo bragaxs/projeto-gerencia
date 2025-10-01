@@ -154,9 +154,17 @@ body {
   justify-items: center;
 }
 
-.align-center{
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  gap: 20px;               /* espaço entre elementos */
+.align-center {
+  position: fixed;           /* fixa na tela */
+  bottom: 0;                 /* colado na parte inferior */
+  left: 50%;                 /* move para 50% da largura */
+  transform: translateX(-50%); /* centraliza horizontalmente */
+  background-color: var(--very-dark-blue-card); /* opcional: fundo */
+  color: var(--soft-blue);   /* cor do texto */
+  padding: 10px 20px;        /* espaçamento interno */
+  border-radius: 10px 10px 0 0; /* cantos arredondados no topo */
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.3); /* sombra opcional */
+  z-index: 1000;             /* garante que fique acima de outros elementos */
 }
