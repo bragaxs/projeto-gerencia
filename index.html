@@ -3,18 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NFT Preview Card List</title>
+  <title>NFT Card List</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="logo.png" alt="NFT Card List Logo" class="logo"/>
+      <h1 class="site-title">NFT Card List</h1>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Collection</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Lista de Cards -->
   <section class="card-list">
-    
-  
-    
+    <!-- Card 1 -->
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="card__image-container animate__animated animate__zoomIn">
+        <img src="nft1.jpg" alt="NFT 1" class="card__image"/>
+        <div class="card__overlay">
+          <img src="icon-view.svg" alt="View icon" class="card__view-icon"/>
+        </div>
+      </div>
+      <h1 class="card__title">Equilibrium #3429</h1>
+      <p class="card__description">Our Equilibrium collection promotes balance and calm.</p>
+      <div class="card__details">
+        <div class="card__price">
+          <img src="icon-ethereum.svg" alt="Ethereum"/>
+          <span>0.041 ETH</span>
+        </div>
+        <div class="card__time">
+          <img src="icon-clock.svg" alt="Clock"/>
+          <span>3 days left</span>
+        </div>
+      </div>
+      <div class="card__divider"></div>
+      <div class="card__creator">
+        <img src="image-avatar.png" alt="Creator" class="card__avatar"/>
+        <p>Creation of <span>Jules Wyvern</span></p>
+      </div>
+    </div>
 
-    
+    <!-- Card 2 -->
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="card__image-container animate__animated animate__zoomIn">
+        <img src="nft2.jpg" alt="NFT 2" class="card__image"/>
+        <div class="card__overlay">
+          <img src="icon-view.svg" alt="View icon" class="card__view-icon"/>
+        </div>
+      </div>
+      <h1 class="card__title">Infinity #1291</h1>
+      <p class="card__description">Explore the endless possibilities of digital art.</p>
+      <div class="card__details">
+        <div class="card__price">
+          <img src="icon-ethereum.svg" alt="Ethereum"/>
+          <span>0.075 ETH</span>
+        </div>
+        <div class="card__time">
+          <img src="icon-clock.svg" alt="Clock"/>
+          <span>5 days left</span>
+        </div>
+      </div>
+      <div class="card__divider"></div>
+      <div class="card__creator">
+        <img src="image-avatar.png" alt="Creator" class="card__avatar"/>
+        <p>Creation of <span>Alice Nguyen</span></p>
+      </div>
+    </div>
 
+    <!-- Card 3 -->
+    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+      <div class="card__image-container animate__animated animate__zoomIn">
+        <img src="nft3.jpg" alt="NFT 3" class="card__image"/>
+        <div class="card__overlay">
+          <img src="icon-view.svg" alt="View icon" class="card__view-icon"/>
+        </div>
+      </div>
+      <h1 class="card__title">Spectrum #4510</h1>
+      <p class="card__description">Colors and shapes that redefine creativity.</p>
+      <div class="card__details">
+        <div class="card__price">
+          <img src="icon-ethereum.svg" alt="Ethereum"/>
+          <span>0.032 ETH</span>
+        </div>
+        <div class="card__time">
+          <img src="icon-clock.svg" alt="Clock"/>
+          <span>1 day left</span>
+        </div>
+      </div>
+      <div class="card__divider"></div>
+      <div class="card__creator">
+        <img src="image-avatar.png" alt="Creator" class="card__avatar"/>
+        <p>Creation of <span>Mark Lee</span></p>
+      </div>
+    </div>
   </section>
+
+  <!-- Footer fixo -->
+  <div class="align-center">
+    <h1>Desenvolvido por: Vitório Braga, Miguel Gomes</h1>
+  </div>
+
 </body>
 </html>

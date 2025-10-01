@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Variáveis */
 :root {
   --soft-blue: hsl(215, 51%, 70%);
   --cyan: hsl(178, 100%, 50%);
@@ -15,22 +16,85 @@
   --font: 'Outfit', sans-serif;
 }
 
+/* Body */
 body {
   font-family: var(--font);
   background-color: var(--very-dark-blue-main);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   color: var(--soft-blue);
+  margin: 0;
+  padding: 0 0 120px 0; /* espaço para o footer fixo */
 }
 
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--very-dark-blue-card);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 50px;
+}
+
+.site-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--soft-blue);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: var(--cyan);
+}
+
+/* Responsividade Header */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Card individual */
 .card {
   background-color: var(--very-dark-blue-card);
   border-radius: 15px;
   padding: 20px;
   width: 350px;
   box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card__image-container {
@@ -48,10 +112,7 @@ body {
 
 .card__overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: hsla(178, 100%, 50%, 0.5);
   display: flex;
   align-items: center;
@@ -134,7 +195,7 @@ body {
   color: var(--cyan);
 }
 
-/* Responsividade */
+/* Responsividade do card */
 @media (max-width: 400px) {
   .card {
     width: 90%;
@@ -142,18 +203,32 @@ body {
   }
 }
 
+/* Lista de cards */
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   justify-items: center;
 }
 
+/* Footer fixo centralizado */
+.align-center {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--soft-blue);
+  z-index: 1000;
+}
 
-body {
-  background-color: var(--very-dark-blue-main);
-  font-family: var(--font);
-  margin: 0;
-  padding: 0;
+@media (max-width: 400px) {
+  .align-center h1 {
+    font-size: 0.85rem;
+  }
 }
