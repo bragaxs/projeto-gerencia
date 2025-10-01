@@ -1,1 +1,180 @@
-/* Reset */ * { margin: 0; padding: 0; box-sizing: border-box; } /* Variáveis */ :root { --soft-blue: hsl(215, 51%, 70%); --cyan: hsl(178, 100%, 50%); --very-dark-blue-main: hsl(217, 54%, 11%); --very-dark-blue-card: hsl(216, 50%, 16%); --very-dark-blue-line: hsl(215, 32%, 27%); --white: hsl(0, 0%, 100%); --font: 'Outfit', sans-serif; } /* Body */ body { font-family: var(--font); background-color: var(--very-dark-blue-main); color: var(--soft-blue); margin: 0; padding: 0 0 120px 0; /* espaço para footer fixo */ } /* Card individual */ .card { background-color: var(--very-dark-blue-card); border-radius: 15px; padding: 20px; width: 350px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); transition: transform 0.3s ease; } .card:hover { transform: translateY(-10px); } .card__image-container { position: relative; border-radius: 10px; overflow: hidden; cursor: pointer; } .card__image { width: 100%; display: block; border-radius: 10px; } .card__overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: hsla(178, 100%, 50%, 0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; } .card__image-container:hover .card__overlay { opacity: 1; } .card__view-icon { width: 50px; } .card__title { margin: 20px 0 15px; font-size: 1.4rem; font-weight: 600; color: var(--white); cursor: pointer; transition: color 0.3s ease; } .card__title:hover { color: var(--cyan); } .card__description { font-size: 1rem; line-height: 1.5; } .card__details { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; } .card__price, .card__time { display: flex; align-items: center; gap: 8px; font-weight: 600; } .card__price span { color: var(--cyan); } .card__divider { height: 1px; background-color: var(--very-dark-blue-line); } .card__creator { display: flex; align-items: center; gap: 15px; margin-top: 15px; font-size: 0.9rem; } .card__avatar { width: 35px; height: 35px; border: 1px solid var(--white); border-radius: 50%; } .card__creator span { color: var(--white); cursor: pointer; transition: color 0.3s ease; } .card__creator span:hover { color: var(--cyan); } /* Responsividade do card */ @media (max-width: 400px) { .card { width: 90%; padding: 15px; } } /* Lista de cards */ .card-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: 0 auto; justify-items: center; } /* Footer fixo centralizado */ .align-center { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); text-align: center; font-size: 1rem; color: var(--soft-blue); z-index: 1000; } @media (max-width: 400px) { .align-center h1 { font-size: 0.85rem; } }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --very-dark-blue-main: hsl(217, 54%, 11%);
+  --very-dark-blue-card: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --font: 'Outfit', sans-serif;
+}
+
+/* Body */
+body {
+  font-family: var(--font);
+  background-color: var(--very-dark-blue-main);
+  color: var(--soft-blue);
+  margin: 0;
+  padding: 0 0 120px 0;
+  /* espaço para footer fixo */
+}
+
+/* Card individual */
+.card {
+  background-color: var(--very-dark-blue-card);
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card__image-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__image-container:hover .card__overlay {
+  opacity: 1;
+}
+
+.card__view-icon {
+  width: 50px;
+}
+
+.card__title {
+  margin: 20px 0 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card__title:hover {
+  color: var(--cyan);
+}
+
+.card__description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.card__price,
+.card__time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.card__price span {
+  color: var(--cyan);
+}
+
+.card__divider {
+  height: 1px;
+  background-color: var(--very-dark-blue-line);
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.card__avatar {
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.card__creator span {
+  color: var(--white);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card__creator span:hover {
+  color: var(--cyan);
+}
+
+/* Responsividade do card */
+@media (max-width: 400px) {
+  .card {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* Lista de cards */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Footer fixo centralizado */
+.align-center {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--soft-blue);
+  z-index: 1000;
+}
+
+@media (max-width: 400px) {
+  .align-center h1 {
+    font-size: 0.85rem;
+  }
+}
